@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void main( void )
+{
+  switch(stageOfGame)
+  {
+    case 0:
+      startup();
+      break;
+
+    case 1:
+      while(1){
+        set_difficulty();
+        delay(difficulty);
+        game_over();
+        game_win();
+        buttons();
+        display_clear(NUMBER_OF_PAGES/2,clear);
+        move_Constant();
+        get_posSnake();
+        get_posFood();
+        check_collide();
+        set_pixel(foodX, foodY);
+        set_pixel(snakeX, snakeY);
+        update();
+        display_image(0,display);
+      }
+      break;
+  }
+}
